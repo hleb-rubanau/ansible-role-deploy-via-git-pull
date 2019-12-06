@@ -36,7 +36,8 @@ Mandatory:
 4. ```deployment_git_branch``` (optional) -- branch to switch to
 5. ```deployment_git_subdir``` (optional) -- subdirectory inside git repo to switch to before running command
 6. ```deployment_git_keyfile``` (optional) -- SSH private key file to use (unless authentication is already handled for the session)
-
+7. ```deployment_recipes_directory``` (optional, default: `/usr/local/etc/recipes/`) -- directory to handle recipes (git worktrees) named after projects
+8. ```deployment_schedule``` (optional, default: ```{minute: '*/20'}```) -- dictionary, cron schedule for git pulls
     
 # In playbook:
 Add role deploy-via-git-pull
