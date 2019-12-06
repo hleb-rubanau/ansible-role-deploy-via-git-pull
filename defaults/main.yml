@@ -1,0 +1,7 @@
+---
+deployment_recipes_directory: /usr/local/etc/recipes
+deployment_git_branch: master
+deployment_git_subdir: ""
+deployment_command: "./deploy.sh"
+deployment_schedule:
+    minute: */20

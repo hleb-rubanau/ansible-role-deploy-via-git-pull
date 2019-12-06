@@ -1,0 +1,18 @@
+---
+- file:
+    src: files/deploy_from_git.sh
+    dest: /usr/local/bin/deploy_from_git.sh
+    mode: 0755
+- template:
+    src: deploy_project.sh
+    dest: /usr/local/bin/deploy_{{ deployment_project }}.sh
+    mode: 0755
+- cron:
+    name: Update {{ deployment_project }}
+    minute: "{{ deployment_schedule.get('minute', '*') }}"
+    hour: "{{ deployment_schedule.get('hour', '*') }}"
+    day: "{{ deployment_schedule.get('day','*')}}"
+    month: "{{ deployment_schedule.get('month','*')}}"
+    weekday: "{{ deployment_schedule.get('weekday','*')}}"
+    job: /usr/local/bin/deploy_{{ deployment_project }}.sh 2>/dev/null
+    

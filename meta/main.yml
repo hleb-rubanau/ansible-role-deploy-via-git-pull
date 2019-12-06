@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: deploy-via-git-push
+  role_name: deploy-via-git-pull
   author: Hleb Rubanau
-  description: Update host via git push to local storage
+  description: Update host via git pull from upstream repo
   license: MIT
   min_ansible_version: 2.1
   galaxy_tags:
