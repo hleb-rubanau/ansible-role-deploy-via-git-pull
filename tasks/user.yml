@@ -1,0 +1,19 @@
+---
+- apt:
+    name: 
+      - git
+      - sudo
+- user:
+    user: "{{ deployment_dedicated_user_name }}"
+    create_home: yes 
+    password_lock: yes
+    system: yes
+- lineinfile:
+    path: /etc/sudoers
+    line: "{{ deployment_dedicated_user_name }}     ALL = (root) NOPASSWD:SETENV:{{ project_deployment_util }}"
+    validate: 'visudo -cf "%s"'
+- authorized_key:
+    user: "{{ deployment_dedicated_user_name }}"
+    key: "{{ item }}"
+    key_options: "{{ 'command=\"sudo '+project_deployment_util+'\",' if deployment_dedicated_user_restrict else '' }}no-port-forwarding"
+  with_items: "{{ deployment_dedicated_user_keys }}"

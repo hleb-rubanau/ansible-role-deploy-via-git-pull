@@ -3,5 +3,11 @@ deployment_recipes_directory: /usr/local/etc/recipes
 deployment_git_branch: master
 deployment_git_subdir: ""
 deployment_command: "./deploy.sh"
-deployment_schedule:
+deployment_use_lockfile: no
+deployment_dedicated_user: no
+deployment_dedicated_user_name:  deploy
+deployment_dedicated_user_keys:  []
+deployment_dedicated_user_restrict: yes
+deployment_use_cron: no
+deployment_cron_schedule:
     minute: */20

@@ -1,6 +1,11 @@
 #!/bin/bash
 
+set -e
+set -o pipefail
+
+{% if deployment_use_lockfile %}
 export DEPLOYMENT_LOCK_FILE="/var/run/deployments/{{ deployment_project }}.pid"
+{% end %}
 export DEPLOYMENT_COMMAND="{{ deployment_command }}"
 {% if deployment_git_upstream is defined %}
 export DEPLOYMENT_GIT_UPSTREAM="{{ deployment_git_upstream }}"
