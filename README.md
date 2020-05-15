@@ -37,8 +37,14 @@ Mandatory:
 5. ```deployment_git_subdir``` (optional) -- subdirectory inside git repo to switch to before running command
 6. ```deployment_git_keyfile``` (optional) -- SSH private key file to use (unless authentication is already handled for the session)
 7. ```deployment_recipes_directory``` (optional, default: `/usr/local/etc/recipes/`) -- directory to handle recipes (git worktrees) named after projects
-8. ```deployment_schedule``` (optional, default: ```{minute: '*/20'}```) -- dictionary, cron schedule for git pulls
-    
+8. ```deployment_use_cron``` (optional, default: no) -- whether to install cron task for regular run of the task
+  8. ```deployment_cron_schedule``` (optional, default: ```{minute: '*/20'}```) -- dictionary, cron schedule for git pulls
+9. ```deployment_dedicated_user``` (optional, default: no) -- whether to setup a dedicated user for external invocation of deployments via SSH
+  9. ```deployment_dedicated_user_name```
+  9. ```deployment_dedicated_user_keys``` -- list of public SSH keys for dedicated user
+  9. ```deployment_dedicated_user_restrict``` -- whether to restrict dedicated user keys to only be able to run the deployment command
+10. ```deployment_use_lockfile``` (optional, default: no)  -- whether to use lock file to prevent parallel deployment runs
+
 # In playbook:
 Add role deploy-via-git-pull
 
