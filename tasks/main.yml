@@ -1,7 +1,7 @@
 ---
 - set_fact:
     project_deployment_util: /usr/local/bin/setup_{{ deployment_project }}.sh
-- file:
+- copy:
     src: files/deploy_from_git.sh
     dest: /usr/local/bin/deploy_from_git.sh
     mode: 0755
