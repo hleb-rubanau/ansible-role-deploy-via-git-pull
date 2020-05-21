@@ -6,4 +6,4 @@
     day: "{{ deployment_cron_schedule.get('day','*')}}"
     month: "{{ deployment_cron_schedule.get('month','*')}}"
     weekday: "{{ deployment_cron_schedule.get('weekday','*')}}"
-    job: "{{ project_deployment_util }} >/dev/null  2>&1
+    job: "{{ project_deployment_util }} >/dev/null  2>&1"
