@@ -10,4 +10,4 @@ deployment_dedicated_user_keys:  []
 deployment_dedicated_user_restrict: yes
 deployment_use_cron: no
 deployment_cron_schedule:
-    minute: */20
+    minute: "*/20"
