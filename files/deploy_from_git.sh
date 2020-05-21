@@ -65,7 +65,7 @@ if [ ! -z "$DEPLOYMENT_GIT_SUBDIR" ]; then
 fi
 
 say "Running deployment command: $DEPLOYMENT_COMMAND"
-if [ ! -z "$DEPLOYMENT_LOCK_FILE" ]; then
+if [ -z "$DEPLOYMENT_LOCK_FILE" ]; then
     exec $DEPLOYMENT_COMMAND
 else
     $DEPLOYMENT_COMMAND 

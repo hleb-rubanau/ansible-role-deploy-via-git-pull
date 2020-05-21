@@ -19,4 +19,4 @@ export DEPLOYMENT_GIT_SUBDIR="{{ deployment_git_subdir }}"
 export DEPLOYMENT_GIT_KEYFILE="{{ deployment_git_keyfile }}"
 {% endif %}
 
-/usr/local/bin/deploy_from_git.sh 2>&1 | logger -s -t "deploy_{{ deployment_project }}"
+/usr/local/bin/deploy_from_git.sh 2>&1 | logger -e -s -t "deploy_{{ deployment_project }}"
