@@ -13,7 +13,7 @@ export DEPLOYMENT_GIT_UPSTREAM="{{ deployment_git_upstream }}"
 export DEPLOYMENT_GIT_BRANCH="{{ deployment_git_branch }}"
 export DEPLOYMENT_GIT_WORKDIR="{{ deployment_recipes_directory }}/{{ deployment_project }}"
 export DEPLOYMENT_GIT_BRANCH="{{ deployment_git_branch }}"
-{% if len(deployment_git_subdir)>0 %}
+{% if length(deployment_git_subdir)>0 %}
 export DEPLOYMENT_GIT_SUBDIR="{{ deployment_git_subdir }}"
 {% endif %}
 {% if deployment_git_keyfile is defined %}
