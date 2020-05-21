@@ -1,0 +1,9 @@
+---
+- cron:
+    name: Update {{ deployment_project }}
+    minute: "{{ deployment_cron_schedule.get('minute', '*') }}"
+    hour: "{{ deployment_cron_schedule.get('hour', '*') }}"
+    day: "{{ deployment_cron_schedule.get('day','*')}}"
+    month: "{{ deployment_cron_schedule.get('month','*')}}"
+    weekday: "{{ deployment_cron_schedule.get('weekday','*')}}"
+    job: "{{ project_deployment_util }} >/dev/null  2>&1
