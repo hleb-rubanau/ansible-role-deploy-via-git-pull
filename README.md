@@ -32,7 +32,7 @@ Mandatory:
 
 1. ```deployment_project``` -- symbolic name of the recipes set (is used in logging etc.)
 2. ```deployment_command``` -- command to run inside git repo to deploy the configuration (default: deploy.sh)
-3. ```deployment_git_upstream``` -- url of a git repo to cloune
+3. ```deployment_git_upstream``` (optional, but either it or deployment_recipe_directory must be defined) -- url of a git repo to cloune
 4. ```deployment_git_branch``` (optional) -- branch to switch to
 5. ```deployment_git_subdir``` (optional) -- subdirectory inside git repo to switch to before running command
 6. ```deployment_git_keyfile``` (optional) -- SSH private key file to use (unless authentication is already handled for the session)
