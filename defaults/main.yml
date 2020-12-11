@@ -11,3 +11,5 @@ deployment_dedicated_user_restrict: yes
 deployment_use_cron: no
 deployment_cron_schedule:
     minute: "*/20"
+deployment_skip_logger: no
+deployment_log_prefix: deploy
