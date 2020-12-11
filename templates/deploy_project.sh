@@ -11,7 +11,13 @@ export DEPLOYMENT_COMMAND="{{ deployment_command }}"
 export DEPLOYMENT_GIT_UPSTREAM="{{ deployment_git_upstream }}"
 {% endif %}
 export DEPLOYMENT_GIT_BRANCH="{{ deployment_git_branch }}"
+{% if deployment_git_workdir is defined %}
+# as deployment_git_workdir
+export DEPLOYMENT_GIT_WORKDIR="{{ deployment_git_workdir }}"
+{% else %}
+# as deployment_recipes_directory / deployment_project
 export DEPLOYMENT_GIT_WORKDIR="{{ deployment_recipes_directory }}/{{ deployment_project }}"
+{% endif %}
 {% if deployment_git_subdir | length %}
 export DEPLOYMENT_GIT_SUBDIR="{{ deployment_git_subdir }}"
 {% endif %}

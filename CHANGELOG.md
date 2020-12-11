@@ -1,3 +1,7 @@
+# v1.3,0  (2020-12-11)
+
+* Tweakable work directory
+
 # v1.2.1  (2020-12-11)
 
 Tweak logging options
