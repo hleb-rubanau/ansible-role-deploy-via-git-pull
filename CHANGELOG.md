@@ -1,3 +1,7 @@
+# v1.3.1  (2021-06-18)
+
+* Bugfix: proper configuration of `GIT_SSH_OPTS`
+
 # v1.3,0  (2020-12-11)
 
 * Tweakable work directory
