@@ -21,8 +21,8 @@ if [ -z "$DEPLOYMENT_GIT_UPSTREAM" ] && [ ! -e "$DEPLOYMENT_GIT_WORKDIR" ]; then
 if [ -z "$DEPLOYMENT_GIT_KEYFILE" ]; then
     say "WARNING: no DEPLOYMENT_GIT_KEYFILE specified, assuming ssh identity is already in place";
 else
-    export GIT_SSH_OPTS="$GIT_SSH_OPTS -i $DEPLOYMENT_GIT_KEYFILE"
-    say "GIT_SSH_OPTS=$GIT_SSH_OPTS"
+    export GIT_SSH_COMMAND="ssh -i $DEPLOYMENT_GIT_KEYFILE"
+    say "GIT_SSH_COMMAND=$GIT_SSH_COMMAND"
     chmod -v 0600 $DEPLOYMENT_GIT_KEYFILE    
 fi 
 

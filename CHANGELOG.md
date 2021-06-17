@@ -1,4 +1,4 @@
-# v1.3.1  (2021-06-18)
+# v1.3.2  (2021-06-18)
 
 * Bugfix: proper configuration of `GIT_SSH_OPTS`
 
