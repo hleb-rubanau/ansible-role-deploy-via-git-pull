@@ -1,3 +1,7 @@
+# v1.4.0  (2021-08-12)
+
+* Support `DEPLOYMENT_SKIP_CHECKOUT_ON_EXISTING_DIR`
+
 # v1.3.2  (2021-06-18)
 
 * Bugfix: proper configuration of `GIT_SSH_OPTS`

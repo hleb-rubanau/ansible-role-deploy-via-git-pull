@@ -12,4 +12,5 @@ deployment_use_cron: no
 deployment_cron_schedule:
     minute: "*/20"
 deployment_skip_logger: no
+deployment_skip_checkout_on_existing_dir: no
 deployment_log_prefix: deploy

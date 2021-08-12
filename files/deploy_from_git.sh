@@ -53,11 +53,17 @@ if [ ! -e "$DEPLOYMENT_GIT_WORKDIR" ]; then
         git checkout -t "origin/$DEPLOYMENT_GIT_BRANCH"
     fi
 else
+    say "cd $DEPLOYMENT_GIT_WORKDIR"
     cd "$DEPLOYMENT_GIT_WORKDIR"
-    git checkout $DEPLOYMENT_GIT_BRANCH
+    if [ "$DEPLOYMENT_SKIP_CHECKOUT_ON_EXISTING_DIR" == "yes" ]; then
+        say "$DEPLOYMENT_GIT_WORKDIR : skipping git checkout"
+    else
+        say "$DEPLOYMENT_GIT_WORKDIR : git checkout $DEPLOYMENT_GIT_BRANCH"
+        git checkout $DEPLOYMENT_GIT_BRANCH
+    fi
 fi
 
-say "On branch $DEPLOYMENT_GIT_BRANCH, pulling"
+say "$DEPLOYMENT_GIT_WORKDIR : git pull"
 git pull
 
 if [ ! -z "$DEPLOYMENT_GIT_SUBDIR" ]; then

@@ -28,10 +28,13 @@ Run `ansible-galaxy install -r requirements.yml roles/`
 
 ### Ansible variables
 
-Mandatory:
+#### Mandatory:
 
 1. ```deployment_project``` -- symbolic name of the recipes set (is used in logging etc.)
 2. ```deployment_command``` -- command to run inside git repo to deploy the configuration (default: deploy.sh)
+
+#### Optional: 
+
 3. ```deployment_git_upstream``` (optional, but either it or deployment_recipe_directory must be defined) -- url of a git repo to cloune
 4. ```deployment_git_branch``` (optional) -- branch to switch to
 5. ```deployment_git_subdir``` (optional) -- subdirectory inside git repo to switch to before running command
@@ -44,6 +47,7 @@ Mandatory:
   9. ```deployment_dedicated_user_keys``` -- list of public SSH keys for dedicated user
   9. ```deployment_dedicated_user_restrict``` -- whether to restrict dedicated user keys to only be able to run the deployment command
 10. ```deployment_use_lockfile``` (optional, default: no)  -- whether to use lock file to prevent parallel deployment runs
+11. ```deployment_skip_checkout_on_existing_dir``` (optional, default: no) -- avoid git checkout on existing dirs, work over any checked out revision/branch
 
 # In playbook:
 Add role deploy-via-git-pull

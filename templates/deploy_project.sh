@@ -24,6 +24,9 @@ export DEPLOYMENT_GIT_SUBDIR="{{ deployment_git_subdir }}"
 {% if deployment_git_keyfile is defined %}
 export DEPLOYMENT_GIT_KEYFILE="{{ deployment_git_keyfile }}"
 {% endif %}
+{% if deployment_skip_checkout_on_existing_dir %}
+export DEPLOYMENT_SKIP_CHECKOUT_ON_EXISTING_DIR="yes"
+{% endif %}
 
 {% if deployment_skip_logger %}
 exec /usr/local/bin/deploy_from_git.sh 
