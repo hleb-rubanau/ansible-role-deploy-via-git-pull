@@ -1,3 +1,7 @@
+# v1.5.0 (2023-11-27)
+
+* Update ansible syntax
+
 # v1.4.0  (2021-08-12)
 
 * Support `DEPLOYMENT_SKIP_CHECKOUT_ON_EXISTING_DIR`

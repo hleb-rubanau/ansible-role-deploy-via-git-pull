@@ -9,7 +9,7 @@
     src: deploy_project.sh
     dest: "{{ project_deployment_util }}"
     mode: 0755
-- include: cron.yml
+- include_tasks: cron.yml
   when: deployment_use_cron
-- include: user.yml
+- include_tasks: user.yml
   when: deployment_dedicated_user
